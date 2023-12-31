@@ -1,0 +1,12 @@
+.idea/
+.*_cache/
+__pycache__
+.pytest_cache
+.coverage
+venv/
+backend/.env
+development_containers/.env
+development_containers/static
+backend/static/
+media/
+postgres_data/
