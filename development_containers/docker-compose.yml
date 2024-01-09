@@ -39,6 +39,7 @@ services:
     env_file:
       - .env
     volumes:
+      - ./js/:/app/calculator/static/calculator/js/.
       - ../backend/:/app/.
       - ./static:/app/static
       - ./media:/app/media
@@ -65,3 +66,12 @@ services:
       - ${NGINX_EXTERNAL_PORT}:80
       - ${NGINX_EXTERNAL_SSL_PORT}:443
     restart: unless-stopped
+
+
+
+#  frontend:
+#    build:
+#      context: ../frontend
+#      dockerfile: Dockerfile
+#    ports:
+#      - '3000:3000'
