@@ -9,7 +9,7 @@
             <title>Расчёт Утеплителей</title>
 
             <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/normalize.css' %}">
-            <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Vibur:400" rel="stylesheet" type='text/css'>
             <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/main.css' %}">
         </head>
         <body>
@@ -21,7 +21,7 @@
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
                         </button>
-                        <input id="quantity" name="quantity" type="number" class="quan_tity" min="0"
+                        <input type="number" id="quantity" name="quantity" class="quan_tity" min="0"
                             max="1000000" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']
                             .includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
                             onKeyUp="if(Object.keys(Array.from(String(this.value), Number)).length>Object.

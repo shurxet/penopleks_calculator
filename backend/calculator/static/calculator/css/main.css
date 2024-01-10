@@ -8,7 +8,7 @@
 
 html{
     /* Это изображение отобразиться на всю страницу */
-    background:url('../../images/') no-repeat center center;
+    background:url('../images/') no-repeat center center;
 
     /* Принудительно указываем высоту равную 100% от высоты окна браузера */
     min-height:100%;
@@ -95,6 +95,7 @@ label {
 	transition: 0.5s;
 	margin: 4px;
 	background-color: #0f0909;
+
 }
 .plus_minus .bt_minus:hover svg,
 .plus_minus .bt_plus:hover svg {
@@ -165,7 +166,7 @@ input {
     text-align: center;
 }
 button {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     padding: 15px 26px;
@@ -174,6 +175,7 @@ button {
     width: 290px;
     margin: 0px auto;
     color: #fff;
+    /*animation: pulsate 100s infinite alternate;*/
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
@@ -183,6 +185,7 @@ button {
       0 0 92px #0fa,
       0 0 102px #0fa,
       0 0 151px #0fa;
+      /*inset 0 0 1.3rem #0fa;*/
     font-family: "Vibur", sans-serif;
     background-color: #0f0909;
     border: 0.5px solid #0f0909;
@@ -198,17 +201,43 @@ button {
     padding: 16px;
     height: ;
     border-radius: 15px;
-    font-size:17px;
+    /*font-size:17px;*/
     background-color: #0f0909;
     color: #fff;
     text-shadow:
-      0 0 7px #fff,
+      /*0 0 7px #fff,
       0 0 10px #fff,
       0 0 21px #fff,
       0 0 42px #0fa,
       0 0 82px #0fa,
       0 0 92px #0fa,
       0 0 102px #0fa,
-      0 0 151px #0fa;
+      0 0 151px #0fa;*/
+    font-size: 1rem;
     font-family: "Vibur", sans-serif;
 }
+
+
+/*@keyframes pulsate {
+  100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  0% {
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px #0fa,
+    0 0 45px #0fa,
+    0 0 55px #0fa,
+    0 0 70px #0fa,
+    0 0 80px #0fa;
+}*/
