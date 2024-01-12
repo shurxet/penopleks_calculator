@@ -56,7 +56,7 @@ services:
     volumes:
       - ./static:/app/static
       - ./media:/app/media
-      - ./ssl:/etc/ssl
+      - ../ssl:/etc/ssl
     depends_on:
       - api
     ports:
