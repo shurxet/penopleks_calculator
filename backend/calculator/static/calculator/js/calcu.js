@@ -7,14 +7,13 @@ const price = document.getElementById("price");
 button.addEventListener("click", () => {
     let data = {
         'required_area': area.value,
-        'sheet_thickness': thickness.value,
         'package_price': price.value,
         'insulation': thickness.options[thickness.selectedIndex].text
     }
     console.log(data)
     async function calcu() {
         const response =  await fetch(
-            'http://192.168.31.47/calculation',
+            'http://localhost:8000/calculation',
             {
                 method: 'POST',
                 body: JSON.stringify(data),

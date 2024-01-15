@@ -37,21 +37,11 @@
                     <div class="calcu_select">
                         <select name="thickness" id="thickness">
                             <optgroup label="1. ПЕНОПЛЭКС">
-                            <option value="20">Пеноплэкс комфорт 20мм
-                            <option value="30">Пеноплэкс комфорт 30мм
-                            <option value="40">Пеноплэкс комфорт 40мм
-                            <option value="50">Пеноплэкс комфорт 50мм
-                            <option value="100">Пеноплэкс комфорт 100мм
+                            {% for i in insulations %}
+                                <option>{{ i }}
+                            {% endfor %}
                             <optgroup label="2. ISOVOL">
-                            <option value="0">null
-                            <option value="0">null
-                            <option value="0">null
-                            <option value="0">null
                             <optgroup label="3. URSA">
-                            <option value="0">null
-                            <option value="0">null
-                            <option value="0">null
-                            <option value="0">null
                         </select>
                     </div>
                 <label>Цена за упаковку:</label>

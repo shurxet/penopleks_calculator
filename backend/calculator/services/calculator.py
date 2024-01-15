@@ -19,19 +19,25 @@ comfort_50 = Insulation(name="Пеноплэкс комфорт 50мм", sheet_a
                         sheets_package=7)
 comfort_100 = Insulation(name="Пеноплэкс комфорт 100мм", sheet_area=0.692, sheet_volume=0.0693, sheets_package=4)
 
+
+stena_50 = Insulation(name="Пеноплэкс стена 50мм", sheet_area=0.6928571428571429, sheet_volume=0.0347, sheets_package=7)
+stena_100 = Insulation(name="Пеноплэкс стена 100мм", sheet_area=0.692, sheet_volume=0.0693, sheets_package=4)
+
+
 insulations = {
     comfort_20.name: comfort_20,
     comfort_30.name: comfort_30,
     comfort_40.name: comfort_40,
     comfort_50.name: comfort_50,
-    comfort_100.name: comfort_100
+    comfort_100.name: comfort_100,
+    stena_50.name: stena_50,
+    stena_100.name: stena_100
 }
 
 
 #  Калькулятор
 class Calculator:
-    def __init__(self, thickness, area, price, insulation: Insulation):
-        self.thickness = thickness
+    def __init__(self, area, price, insulation: Insulation):
         self.area = area
         self.price = price
         self.name = insulation.name
