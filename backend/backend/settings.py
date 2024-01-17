@@ -39,6 +39,8 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
+CSRF_TRUSTED_ORIGINS = ['https://*.instok.ru']
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -142,5 +144,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DJANGO_SETTINGS_MODULE = env('DJANGO_SETTINGS_MODULE')
 
 CORS_ALLOW_ALL_ORIGINS = True
-
-CSRF_TRUSTED_ORIGINS = ['https://instok.ru ']
