@@ -14,14 +14,14 @@
         </head>
         <body>
             <div class="calcu_reqv">
-                <label>Площадь м2:</label>
+                <label for="area">Площадь м2:</label>
                     <div class="plus_minus">
                         <button id="minus" name="minus" class="bt_minus">
                             <svg viewBox="0 0 24 24">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
                         </button>
-                        <input type="number" id="quantity" name="quantity" class="quan_tity" min="0"
+                        <input type="number" id="area" name="area" class="quan_tity" min="0"
                             max="1000000" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']
                             .includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
                             onKeyUp="if(Object.keys(Array.from(String(this.value), Number)).length>Object.
@@ -33,18 +33,18 @@
                             </svg>
                         </button>
                     </div>
-                <label>Утеплитель:</label>
+                <label for="insulation">Утеплитель:</label>
                     <div class="calcu_select">
-                        <select name="thickness" id="thickness">
+                        <select name="insulation" id="insulation">
                             <optgroup label="1. ПЕНОПЛЭКС">
                             {% for i in insulations %}
-                                <option>{{ i }}
+                                <option value="{{ i.id }}">{{ i }}
                             {% endfor %}
                             <optgroup label="2. ISOVOL">
                             <optgroup label="3. URSA">
                         </select>
                     </div>
-                <label>Цена за упаковку:</label>
+                <label for="price">Цена за упаковку:</label>
                     <div class="calcu_input">
                         <input type="number" id="price" name="price" min="0" max="1000000"
                             onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']

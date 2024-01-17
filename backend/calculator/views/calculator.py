@@ -1,25 +1,52 @@
 import json
 from django.http import JsonResponse
-from django.shortcuts import render
+
+from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from calculator.services import Calculator, insulations
+
+from django.views.generic import ListView
+from django.views import View
+
+from calculator.models import Insulation
+from calculator.services import Calculator
 
 
 # Create your views here.
 
-def index(request):
 
-    return render(request, '../templates/index.html', {'insulations': insulations})
+@method_decorator(csrf_exempt, name="dispatch")
+class InsulationListView(ListView):
+    template_name = '../templates/index.html'
+    model = Insulation
+    context_object_name = 'insulations'
+
+    def get_queryset(self):
+        insulations = self.model.objects.all()
+        return insulations
 
 
-@csrf_exempt
-def calculation(request):
-    data = json.loads(request.body)
+@method_decorator(csrf_exempt, name="dispatch")
+class CalculateView(View):
+    model = Insulation
+    fields = ['sheet_area', 'sheet_volume', 'sheets_package']
 
-    area = int(data['required_area'])
-    price = int(data['package_price'])
-    insulation = data['insulation']
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body)
 
-    response = Calculator(area, price, insulation=insulations[insulation]).calculator()
+        insulation_id = data['id']
+        area = data['area']
+        price = data['price']
 
-    return JsonResponse(response, json_dumps_params={"ensure_ascii": False})
+        obj = self.model.objects.get(pk=insulation_id)
+
+        response = Calculator(
+            area,
+            price,
+            insulation=Insulation(
+                sheet_area=obj.sheet_area,
+                sheet_volume=obj.sheet_volume,
+                sheets_package=obj.sheets_package
+            )
+        ).calculate()
+
+        return JsonResponse(response, json_dumps_params={"ensure_ascii": False})

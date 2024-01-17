@@ -1,14 +1,14 @@
 const button = document.getElementById("but");
-const area = document.getElementById("quantity");
-const thickness = document.getElementById("thickness");
+const area = document.getElementById("area");
+const insulation = document.getElementById("insulation");
 const price = document.getElementById("price");
-
 
 button.addEventListener("click", () => {
     let data = {
-        'required_area': area.value,
-        'package_price': price.value,
-        'insulation': thickness.options[thickness.selectedIndex].text
+        'id': Number(insulation.value),
+        'area': Number(area.value),
+        'price': Number(price.value),
+        // 'insulation': insulation.options[insulation.selectedIndex].text
     }
     console.log(data)
     async function calcu() {

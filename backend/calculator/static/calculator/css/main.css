@@ -8,7 +8,7 @@
 
 html{
     /* Это изображение отобразиться на всю страницу */
-    background:url('../images/') no-repeat center center;
+    /*background:url('../images/.') no-repeat center center;*/
 
     /* Принудительно указываем высоту равную 100% от высоты окна браузера */
     min-height:100%;
@@ -40,7 +40,7 @@ body {
 
 label {
     padding: 0px;
-    line-height: auto;
+    /*line-height: auto;*/
     font-size: 15px;
     font-weight: 700;
 }
@@ -199,13 +199,13 @@ button {
     max-width: 480px;
     margin: 5px auto;
     padding: 16px;
-    height: ;
+    /*height: ;*/
     border-radius: 15px;
     /*font-size:17px;*/
     background-color: #0f0909;
     color: #fff;
-    text-shadow:
-      /*0 0 7px #fff,
+    /*text-shadow:
+      0 0 7px #fff,
       0 0 10px #fff,
       0 0 21px #fff,
       0 0 42px #0fa,

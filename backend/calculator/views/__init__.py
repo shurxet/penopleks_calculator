@@ -1,4 +1,4 @@
-from .calculator import index, calculation
+from .calculator import InsulationListView, CalculateView  # , calculation
 
 
-__all__ = ['index', 'calculation']
+__all__ = ['InsulationListView', 'CalculateView']#, 'calculation']

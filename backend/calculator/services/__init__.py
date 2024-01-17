@@ -1,3 +1,3 @@
-from .calculator import Calculator, insulations
+from .calculator import Calculator#, insulations
 
-__all__ = ['calculator', 'insulations']
+__all__ = ['Calculator']#, 'insulations']
