@@ -39,7 +39,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
-CSRF_TRUSTED_ORIGINS = ['https://*.instok.ru']
+CSRF_TRUSTED_ORIGINS = ['https://instok.ru']
 
 # Application definition
 INSTALLED_APPS = [
