@@ -48,6 +48,5 @@ class Calculator:
             }
 
             return response
-        except ZeroDivisionError:
-            abort_message = 'Data type error'
-            return {'abort_message': abort_message}
+        except Exception as e:
+            return {'error': {e}}

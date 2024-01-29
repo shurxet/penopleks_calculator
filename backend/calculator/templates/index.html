@@ -36,12 +36,12 @@
                 <label for="insulation">Утеплитель:</label>
                     <div class="calcu_select">
                         <select name="insulation" id="insulation">
-                            <optgroup label="1. ПЕНОПЛЭКС">
-                            {% for i in insulations %}
-                                <option value="{{ i.id }}">{{ i }}
+                            {% for i in response %}
+                                <optgroup label="{{ i.title }}">
+                                {% for i in i.subspecies %}
+                                    <option value="{{ i.id }}">{{ i.title }}
+                                {% endfor %}
                             {% endfor %}
-                            <optgroup label="2. ISOVOL">
-                            <optgroup label="3. URSA">
                         </select>
                     </div>
                 <label for="price">Цена за упаковку:</label>

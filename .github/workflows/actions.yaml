@@ -68,8 +68,6 @@ jobs:
           script: |
             cd pc_ci
             sudo -S docker compose down
-            sudo -S docker image prune
-            sudo -S docker image prune -a
-            sudo -S docker compose system prune
+            sudo -S docker system prune -a
             sudo -S docker compose pull
             sudo -S docker compose up -d --build

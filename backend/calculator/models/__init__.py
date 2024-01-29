@@ -1,4 +1,4 @@
 from .base import BaseModel
-from .insulation import Insulation
+from .insulation import Variety, Insulation
 
-__all__ = ['BaseModel', 'Insulation']
+__all__ = [BaseModel, Variety, Insulation]
