@@ -10,3 +10,4 @@ development_containers/static
 backend/static/
 media/
 postgres_data/
+frontend/

@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 {% load static %}
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="yandex-verification" content="8c9e34d27b70836e" />
 
-<html lang="en">
-<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="yandex-verification" content="8c9e34d27b70836e" />
-        <title>Расчёт плит Penopleks</title>
-        <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/normalize.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/main.css' %}">
-</head>
-<body>
+            <title>Расчёт Утеплителей</title>
 
-
-<div>
-    <form action="{% url 'calculation' %}" method="POST">
-          <h3>Расчёт плит Penopleks</h3>
-
-          <label for="name"><h5>Площадь м2</h5></label>
-          <input type="text" id="area" name="required_area"><br>
-
-          <label for="name"><h5>Толщина см</h5></label>
-          <input type="text" id="thickness" name="sheet_thickness"><br>
-
-          <label for="name"><h5>Цена за упаковку</h5></label>
-          <input type="text" id="name" name="package_price"><br>
-
-          <button type="submit">Расчитать</button>
-      </form>
-</div>
-</body>
-</html>
+            <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/normalize.css' %}">
+            <link href="https://fonts.googleapis.com/css?family=Vibur:400" rel="stylesheet" type='text/css'>
+            <link type="text/css" rel="stylesheet" href=" {% static 'calculator/css/main.css' %}">
+        </head>
+        <body>
+            <div class="calcu_reqv">
+                <label for="area">Площадь м2:</label>
+                    <div class="plus_minus">
+                        <button id="minus" name="minus" class="bt_minus">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <input type="number" id="area" name="area" class="quan_tity" min="0"
+                            max="1000000" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']
+                            .includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+                            onKeyUp="if(Object.keys(Array.from(String(this.value), Number)).length>Object.
+                            keys(Array.from(String(this.max), Number)).length)this.value=null">
+                        <button id="plus" name="plus" class="bt_plus">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                <label for="insulation">Утеплитель:</label>
+                    <div class="calcu_select">
+                        <select name="insulation" id="insulation">
+                            {% for i in response %}
+                                <optgroup label="{{ i.title }}">
+                                {% for i in i.subspecies %}
+                                    <option value="{{ i.id }}">{{ i.title }}
+                                {% endfor %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                <label for="price">Цена за упаковку:</label>
+                    <div class="calcu_input">
+                        <input type="number" id="price" name="price" min="0" max="1000000"
+                            onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight']
+                            .includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+                            onKeyUp="if(Object.keys(Array.from(String(this.value), Number)).length>Object
+                            .keys(Array.from(String(this.max), Number)).length)this.value=null;">
+                    </div>
+                <div class="calcu_btn">
+                    <button type="submit" id="but">Расчитать</button>
+                </div>
+            </div>
+            <div class="calcu_resp">
+                <span id="number_packages"></span><br>
+                <span id="number_sheets_plus"></span><br>
+                <span id="number_sheets"></span><br>
+                <span id="total_volume"></span><br><br>
+                <span id="total_price"></span><br>
+            </div>
+            <script src=" {% static 'calculator/js/calcu.js' %}"></script>
+            <script src=" {% static 'calculator/js/pl_mi.js' %}"></script>
+        </body>
+    </html>

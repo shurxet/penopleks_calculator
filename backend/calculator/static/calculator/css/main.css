@@ -1,103 +1,243 @@
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
+html{
+    /* Это изображение отобразиться на всю страницу */
+    /*background:url('../images/.') no-repeat center center;*/
+
+    /* Принудительно указываем высоту равную 100% от высоты окна браузера */
+    min-height:100%;
+
+    /* Магия */
+    background-size:cover;
+    background-color: #0f0909;
+}
+
 
 body {
-  font-family: 'Lato', sans-serif;
-  color: #333;
-  background-color: #f8f8f9;
+    /* Для некоторых мобильных браузеров */
+    min-height:100%;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #0f0909;
 }
 
-form {
-  max-width: 480px;
-  margin: 50px auto;
-  padding: 16px;
-  border: 1px solid #eaeaea;
+
+.calcu_reqv{
+    max-width: 480px;
+    margin: 5px auto;
+    padding: 16px;
+    border-radius: 15px;
+    font-family: "Vibur", sans-serif;
+    background-color: #0f0909;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
-  background-color: #ffffff;
-  border: 1px solid #e5e5e4;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  padding: 8px 18px;
-  height: 48px;
-  width: 100%;
-  color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 16px;
-  transition: all .2s ease;
-}
-
-input::placeholder {
-  color: #999;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #0f868c;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 0 4px 8px 0;
-}
-
-select {
-  padding: 6px;
-  height: 32px;
-  border-radius: 2px;
-}
-
-button {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 15px 26px;
-  color: #FFF;
-  background-color: #0f868c;
-  border-radius: 4px;
-  border: 1px solid #0f868c;
-  text-align: center;
-  width: 100%;
-}
-
-fieldset {
-  margin-bottom: 28px;
-  border: none;
-}
-
-legend {
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 16px;
-}
 
 label {
-  display: block;
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 4px;
+    padding: 0px;
+    /*line-height: auto;*/
+    font-size: 15px;
+    font-weight: 700;
 }
 
-label.light {
-  font-weight: 300;
-  display: inline;
+
+.plus_minus * {
+	box-sizing: border-box;
 }
+.plus_minus {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+    margin-bottom: 50px;
+}
+.plus_minus .bt_minus,
+.plus_minus .bt_plus,
+.plus_minus .quan_tity {
+	color: #BFE2FF;
+	height: 40px;
+	width: 40px;
+	padding: 0;
+	margin: 0px 2px;
+	border-radius: 10px;
+	border: 0.5px solid #0f868c;
+	background: #0f0909;
+	cursor: pointer;
+	outline: 0;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+}
+.plus_minus .quan_tity {
+	width: 200px;
+	text-align: center;
+	font-size: 22px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+    font-family: "Vibur", sans-serif;
+    background-color: #0f0909;
+}
+.plus_minus .bt_minus svg,
+.plus_minus .bt_plus svg {
+	stroke: #333;
+	stroke-width: 4;
+	transition: 0.5s;
+	margin: 4px;
+	background-color: #0f0909;
+
+}
+.plus_minus .bt_minus:hover svg,
+.plus_minus .bt_plus:hover svg {
+	stroke: #FFF;
+}
+
+
+.calcu_select {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+select {
+    width: 290px;
+    height: 40px;
+    border-radius: 10px;
+    color: #8a97a0;
+    font-size: 1rem;
+    font-family:Menlo,Monaco,Consolas,"Courier New",monospace;
+    padding: 2px 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    background-color: #0f0909;
+    border: 0.5px solid #0f868c;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
+
+
+.calcu_input {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+input {
+    border-radius: 10px;
+    font-size: 22px;
+    height: 40px;
+    outline: 0;
+    padding: 8px 18px;
+    width: 290px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    background-color: #0f0909;
+    border: 0.5px solid #0f868c;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+    font-family: "Vibur", sans-serif;
+}
+
+
+.calcu_btn {
+    text-align: center;
+}
+button {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 26px;
+    border-radius: 10px;
+    text-align: center;
+    width: 290px;
+    margin: 0px auto;
+    color: #fff;
+    /*animation: pulsate 100s infinite alternate;*/
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+      /*inset 0 0 1.3rem #0fa;*/
+    font-family: "Vibur", sans-serif;
+    background-color: #0f0909;
+    border: 0.5px solid #0f0909;
+}
+
+
+.calcu_resp {
+    margin: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    max-width: 480px;
+    margin: 5px auto;
+    padding: 16px;
+    /*height: ;*/
+    border-radius: 15px;
+    /*font-size:17px;*/
+    background-color: #0f0909;
+    color: #fff;
+    /*text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;*/
+    font-size: 1rem;
+    font-family: "Vibur", sans-serif;
+}
+
+
+/*@keyframes pulsate {
+  100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  0% {
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px #0fa,
+    0 0 45px #0fa,
+    0 0 55px #0fa,
+    0 0 70px #0fa,
+    0 0 80px #0fa;
+}*/

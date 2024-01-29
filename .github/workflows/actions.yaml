@@ -55,17 +55,19 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           source: "deploy/*"
-          target: "ps_ci"
+          target: "pc_ci"
           strip_components: 1
       - name: deploy app
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd pc_ci
-            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose pull
-            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose up -d --build
+            sudo -S docker compose down
+            sudo -S docker system prune -a
+            sudo -S docker compose pull
+            sudo -S docker compose up -d --build
